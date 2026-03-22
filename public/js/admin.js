@@ -1,4 +1,5 @@
 const token = localStorage.getItem('token');
+let cachedGuests = [];
 
 async function createGuest() {
   const name = document.getElementById('name').value.trim();
@@ -18,10 +19,15 @@ async function createGuest() {
 
 async function loadGuests() {
   const guests = await apiRequest('/guests', 'GET', null, token);
-  const list = document.getElementById('guestList');
-  list.innerHTML = '';
+  cachedGuests = guests;
+  renderGuests(guests);
+}
 
-  guests.forEach(g => {
+function renderGuests(list) {
+  const listEl = document.getElementById('guestList');
+  listEl.innerHTML = '';
+
+  list.forEach(g => {
     const li = document.createElement('li');
     li.className = 'py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-2';
     li.innerHTML = `
@@ -34,9 +40,20 @@ async function loadGuests() {
         <button class="px-3 py-2 text-xs rounded-lg bg-white/10 border border-white/15 hover:border-white/40" onclick="getQR('${g.invitation_code}')">QR</button>
       </div>
     `;
-    list.appendChild(li);
+    listEl.appendChild(li);
   });
 }
+
+// Buscador
+const searchInput = document.getElementById('guestSearch');
+searchInput?.addEventListener('input', (e) => {
+  const term = e.target.value.toLowerCase();
+  const filtered = cachedGuests.filter(g =>
+    (g.name || '').toLowerCase().includes(term) ||
+    (g.invitation_code || '').toLowerCase().includes(term)
+  );
+  renderGuests(filtered);
+});
 
 async function getLink(code) {
   const res = await apiRequest(`/guests/link/${code}`, 'GET', null, token);
