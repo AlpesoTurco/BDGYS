@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestra Boda </title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#D4AF37',
+            silver: '#C0C0C0',
+            wedding: {
+              50: '#f8f9fa',
+              100: '#e9ecef',
+              200: '#dee2e6',
+              300: '#ced4da',
+              400: '#adb5bd',
+              500: '#6c757d',
+              600: '#495057',
+              700: '#343a40',
+              800: '#212529',
+              900: '#000000'
+            }
+          },
+          fontFamily: {
+            'wedding': ['Playfair Display', 'serif'],
+            'script': ['Great Vibes', 'cursive']
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in-out',
+            'slide-up': 'slideUp 0.8s ease-out'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-bg { background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=800&fit=crop&crop=center'); background-size: cover; background-position: center; }
+    .section-bg { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+  </style>
+</head>
+<body class="bg-wedding-50 text-wedding-800 font-wedding">
+  <!-- Header -->
+  <header class="hero-bg text-white py-20 px-6 text-center animate-fade-in">
+    <h1 class="text-6xl font-script mb-4 text-gold">Álvaro & María</h1>
+    <p class="text-xl text-silver">Nos casamos el 22 de Marzo de 2026</p>
+    <div class="mt-8">
+      <a href="#rsvp" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-silver transition duration-300">Confirmar Asistencia</a>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <ul class="flex justify-center space-x-8">
+        <li><a href="#historia" class="text-wedding-700 hover:text-gold transition"> Historia</a></li>
+        <li><a href="#evento" class="text-wedding-700 hover:text-gold transition"> Evento</a></li>
+        <li><a href="#mapa" class="text-wedding-700 hover:text-gold transition"> Ubicación</a></li>
+        <li><a href="#faq" class="text-wedding-700 hover:text-gold transition"> FAQ</a></li>
+        <li><a href="#rsvp" class="text-wedding-700 hover:text-gold transition"> RSVP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-16">
+    <!-- Historia -->
+    <section id="historia" class="section-bg rounded-2xl p-12 animate-slide-up">
+      <h2 class="text-4xl font-script text-center text-gold mb-8">Nuestra Historia</h2>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="space-y-4">
+          <p class="text-lg leading-relaxed">Desde el primer encuentro, supimos que nuestro amor era especial. Una historia de risas, aventuras y momentos inolvidables que nos llevaron hasta este día.</p>
+          <p class="text-lg leading-relaxed">Ahora, queremos compartir esta alegría con ustedes, nuestros seres queridos.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+            <div class="text-4xl mb-2"></div>
+            <h3 class="font-semibold text-wedding-700">Nos conocimos</h3>
+            <p class="text-sm text-wedding-500">2020</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+            <div class="text-4xl mb-2"></div>
+            <h3 class="font-semibold text-wedding-700">La propuesta</h3>
+            <p class="text-sm text-wedding-500">2024</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+            <div class="text-4xl mb-2"></div>
+            <h3 class="font-semibold text-wedding-700">Preparativos</h3>
+            <p class="text-sm text-wedding-500">2025</p>
+          </div>
+          <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+            <div class="text-4xl mb-2"></div>
+            <h3 class="font-semibold text-wedding-700">El gran día</h3>
+            <p class="text-sm text-wedding-500">2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evento -->
+    <section id="evento" class="bg-white rounded-2xl p-12 shadow-xl animate-slide-up" style="animation-delay: 0.2s;">
+      <h2 class="text-4xl font-script text-center text-gold mb-8">Detalles del Evento</h2>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center p-6 bg-wedding-50 rounded-lg">
+          <div class="text-5xl mb-4"></div>
+          <h3 class="font-semibold text-wedding-700 mb-2">Fecha</h3>
+          <p class="text-wedding-600">22 Marzo 2026</p>
+        </div>
+        <div class="text-center p-6 bg-wedding-50 rounded-lg">
+          <div class="text-5xl mb-4"></div>
+          <h3 class="font-semibold text-wedding-700 mb-2">Hora</h3>
+          <p class="text-wedding-600">17:00</p>
+        </div>
+        <div class="text-center p-6 bg-wedding-50 rounded-lg">
+          <div class="text-5xl mb-4"></div>
+          <h3 class="font-semibold text-wedding-700 mb-2">Lugar</h3>
+          <p class="text-wedding-600">Salón Real</p>
+        </div>
+        <div class="text-center p-6 bg-wedding-50 rounded-lg">
+          <div class="text-5xl mb-4"></div>
+          <h3 class="font-semibold text-wedding-700 mb-2">Dress Code</h3>
+          <p class="text-wedding-600">Formal Elegante</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="bg-gradient-to-r from-wedding-700 to-wedding-800 text-white rounded-2xl p-12 text-center animate-slide-up" style="animation-delay: 0.4s;">
+      <h2 class="text-4xl font-script text-gold mb-8">Cuenta Regresiva</h2>
+      <div class="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+        <div class="bg-white/10 rounded-lg p-4">
+          <div class="text-4xl font-bold text-gold" id="days">0</div>
+          <div class="text-sm text-silver">Días</div>
+        </div>
+        <div class="bg-white/10 rounded-lg p-4">
+          <div class="text-4xl font-bold text-gold" id="hours">0</div>
+          <div class="text-sm text-silver">Horas</div>
+        </div>
+        <div class="bg-white/10 rounded-lg p-4">
+          <div class="text-4xl font-bold text-gold" id="minutes">0</div>
+          <div class="text-sm text-silver">Minutos</div>
+        </div>
+        <div class="bg-white/10 rounded-lg p-4">
+          <div class="text-4xl font-bold text-gold" id="seconds">0</div>
+          <div class="text-sm text-silver">Segundos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa" class="bg-white rounded-2xl p-12 shadow-xl animate-slide-up" style="animation-delay: 0.6s;">
+      <h2 class="text-4xl font-script text-center text-gold mb-8">Ubicación</h2>
+      <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+        <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0193599999998!2d-4.41941632346881!3d38.77492977177139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd.." style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-bg rounded-2xl p-12 animate-slide-up" style="animation-delay: 0.8s;">
+      <h2 class="text-4xl font-script text-center text-gold mb-8">Preguntas Frecuentes</h2>
+      <div class="max-w-2xl mx-auto space-y-4">
+        <div class="bg-white rounded-lg p-4 shadow-md">
+          <button class="w-full text-left font-semibold text-wedding-700 hover:text-gold transition" onclick="toggleFAQ(this)">¿Cuál es el dress code?</button>
+          <p class="mt-2 text-wedding-600 hidden">Formal elegante. Recomendamos tonos neutros y pasteles.</p>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md">
+          <button class="w-full text-left font-semibold text-wedding-700 hover:text-gold transition" onclick="toggleFAQ(this)">¿Puedo llevar acompañantes?</button>
+          <p class="mt-2 text-wedding-600 hidden">Sí, indica el número de personas en tu confirmación RSVP.</p>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md">
+          <button class="w-full text-left font-semibold text-wedding-700 hover:text-gold transition" onclick="toggleFAQ(this)">¿Hay estacionamiento?</button>
+          <p class="mt-2 text-wedding-600 hidden">Sí, disponemos de estacionamiento gratuito en el complejo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="bg-gradient-to-r from-gold to-silver text-black rounded-2xl p-12 text-center animate-slide-up" style="animation-delay: 1s;">
+      <h2 class="text-4xl font-script mb-4">Confirma tu Asistencia</h2>
+      <p class="text-lg mb-6">Ingresa tu código de invitación</p>
+      <div class="max-w-md mx-auto">
+        <input id="code" type="text" placeholder="Ej. ABC123" class="w-full px-4 py-3 rounded-lg border-2 border-wedding-300 focus:border-gold focus:outline-none mb-4">
+        <button onclick="goToRSVP()" class="bg-wedding-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-wedding-700 transition">Continuar</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-wedding-800 text-white py-8 text-center">
+    <p class="text-silver"> 2026 Álvaro & María  Con amor </p>
+  </footer>
+
+  <script>
+    function toggleFAQ(btn) {
+      const p = btn.nextElementSibling;
+      p.classList.toggle('hidden');
+    }
+    function goToRSVP() {
+      const code = document.getElementById('code').value.trim();
+      if (!code) return alert('Ingresa tu código');
+      window.location.href = `rsvp.html?code=${code}`;
+    }
+    function updateCountdown() {
+      const weddingDate = new Date('2026-03-22T17:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+      if (distance < 0) return;
+      document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
+
