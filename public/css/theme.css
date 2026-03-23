@@ -40,6 +40,22 @@ body {
   animation: floating 7s ease-in-out infinite;
 }
 
+.photo-frame {
+  border: 8px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  transform: rotate(-4deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-frame.frame-2 {
+  transform: rotate(6deg);
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+}
+
 @keyframes floating {
   0%   { transform: translateY(0px); }
   50%  { transform: translateY(-10px); }
