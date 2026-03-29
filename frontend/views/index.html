@@ -50,20 +50,21 @@
   <header class="hero-bg text-white py-20 px-6 text-center animate-fade-in">
     <h1 class="text-6xl font-script mb-4 text-gold">Álvaro & María</h1>
     <p class="text-xl text-silver">Nos casamos el 22 de Marzo de 2026</p>
-    <div class="mt-8">
-      <a href="#rsvp" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-silver transition duration-300">Confirmar Asistencia</a>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="#rsvp" class="bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-silver transition duration-300 shadow">Confirmar Asistencia</a>
+      <a href="#mapa" class="bg-white/20 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition duration-300 border border-white/40">Ver Ubicaciones</a>
     </div>
   </header>
 
   <!-- Navigation -->
   <nav class="bg-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4">
-      <ul class="flex justify-center space-x-8">
-        <li><a href="#historia" class="text-wedding-700 hover:text-gold transition"> Historia</a></li>
-        <li><a href="#evento" class="text-wedding-700 hover:text-gold transition"> Evento</a></li>
-        <li><a href="#mapa" class="text-wedding-700 hover:text-gold transition"> Ubicación</a></li>
-        <li><a href="#faq" class="text-wedding-700 hover:text-gold transition"> FAQ</a></li>
-        <li><a href="#rsvp" class="text-wedding-700 hover:text-gold transition"> RSVP</a></li>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3">
+      <ul class="flex flex-wrap justify-center gap-3">
+        <li><a href="#historia" class="px-3 py-2 rounded-full text-wedding-700 hover:text-gold hover:bg-wedding-50 transition">Historia</a></li>
+        <li><a href="#evento" class="px-3 py-2 rounded-full text-wedding-700 hover:text-gold hover:bg-wedding-50 transition">Evento</a></li>
+        <li><a href="#mapa" class="px-3 py-2 rounded-full text-wedding-700 hover:text-gold hover:bg-wedding-50 transition">Ubicación</a></li>
+        <li><a href="#faq" class="px-3 py-2 rounded-full text-wedding-700 hover:text-gold hover:bg-wedding-50 transition">FAQ</a></li>
+        <li><a href="#rsvp" class="px-3 py-2 rounded-full text-wedding-700 hover:text-gold hover:bg-wedding-50 transition">RSVP</a></li>
       </ul>
     </div>
   </nav>
@@ -105,6 +106,9 @@
     <!-- Evento -->
     <section id="evento" class="bg-white rounded-2xl p-12 shadow-xl animate-slide-up" style="animation-delay: 0.2s;">
       <h2 class="text-4xl font-script text-center text-gold mb-8">Detalles del Evento</h2>
+      <p class="text-center text-wedding-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Acompáñanos a unir nuestras vidas en sagrado matrimonio en nuestra ceremonia religiosa como dos seres que se aman.
+      </p>
       <div class="grid md:grid-cols-4 gap-6">
         <div class="text-center p-6 bg-wedding-50 rounded-lg">
           <div class="text-5xl mb-4"></div>
@@ -118,14 +122,18 @@
         </div>
         <div class="text-center p-6 bg-wedding-50 rounded-lg">
           <div class="text-5xl mb-4"></div>
-          <h3 class="font-semibold text-wedding-700 mb-2">Lugar</h3>
-          <p class="text-wedding-600">Salón Real</p>
+          <h3 class="font-semibold text-wedding-700 mb-2">Ceremonia</h3>
+          <p class="text-wedding-600">Templo del Señor San José, Arandas, Jal.</p>
         </div>
         <div class="text-center p-6 bg-wedding-50 rounded-lg">
           <div class="text-5xl mb-4"></div>
-          <h3 class="font-semibold text-wedding-700 mb-2">Dress Code</h3>
-          <p class="text-wedding-600">Formal Elegante</p>
+          <h3 class="font-semibold text-wedding-700 mb-2">Recepción</h3>
+          <p class="text-wedding-600">Salón Los Olivos, Arandas, Jal.</p>
         </div>
+      </div>
+      <div class="mt-8 grid sm:grid-cols-2 gap-4">
+        <button onclick="scrollToSection('mapa')" class="w-full bg-wedding-800 text-white py-3 rounded-lg font-semibold hover:bg-wedding-700 transition">Cómo llegar</button>
+        <button onclick="scrollToSection('rsvp')" class="w-full bg-gold text-black py-3 rounded-lg font-semibold hover:bg-silver transition">Confirmar asistencia</button>
       </div>
     </section>
 
@@ -153,10 +161,44 @@
     </section>
 
     <!-- Mapa -->
-    <section id="mapa" class="bg-white rounded-2xl p-12 shadow-xl animate-slide-up" style="animation-delay: 0.6s;">
-      <h2 class="text-4xl font-script text-center text-gold mb-8">Ubicación</h2>
-      <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
-        <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0193599999998!2d-4.41941632346881!3d38.77492977177139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd.." style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section id="mapa" class="bg-white rounded-2xl p-12 shadow-xl animate-slide-up space-y-10" style="animation-delay: 0.6s;">
+      <h2 class="text-4xl font-script text-center text-gold">Ubicaciones</h2>
+      <p class="text-center text-wedding-600 max-w-3xl mx-auto">Hemos elegido dos lugares muy especiales y fáciles de encontrar. Abre el mapa para recibir indicaciones directas en Google Maps.</p>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Ceremonia -->
+        <div class="space-y-4">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 class="text-2xl font-script text-gold">Ceremonia Religiosa</h3>
+              <p class="text-wedding-600">Templo del Señor San José · Arandas, Jalisco</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-4 py-2 rounded-full text-sm font-semibold bg-gold text-black hover:bg-silver transition" onclick="openMap('https://www.google.com/maps?q=Templo+del+Se%C3%B1or+San+Jos%C3%A9,+Arandas,+Jalisco')">Abrir en Google Maps</button>
+              <button class="px-4 py-2 rounded-full text-sm font-semibold bg-wedding-800 text-white hover:bg-wedding-700 transition" onclick="copyAddress('Templo del Señor San José, Arandas, Jalisco')">Copiar dirección</button>
+            </div>
+          </div>
+          <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5937102309834!2d-102.3490419!3d20.9375656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d940a3d2c18b%3A0x6e6d53295d85f1e7!2sTemplo%20del%20Se%C3%B1or%20San%20Jos%C3%A9!5e0!3m2!1ses-419!2smx!4v1711040000000!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <!-- Recepción -->
+        <div class="space-y-4">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 class="text-2xl font-script text-gold">Recepción & Fiesta</h3>
+              <p class="text-wedding-600">Salón Los Olivos · Arandas, Jalisco</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-4 py-2 rounded-full text-sm font-semibold bg-gold text-black hover:bg-silver transition" onclick="openMap('https://www.google.com/maps?q=Sal%C3%B3n+Los+Olivos,+Arandas,+Jalisco')">Abrir en Google Maps</button>
+              <button class="px-4 py-2 rounded-full text-sm font-semibold bg-wedding-800 text-white hover:bg-wedding-700 transition" onclick="copyAddress('Salón Los Olivos, Arandas, Jalisco')">Copiar dirección</button>
+            </div>
+          </div>
+          <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.663909594837!2d-102.3398206!3d20.9347985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d9415c1f6c03%3A0xf0df053cf4a730a0!2sSal%C3%B3n%20Los%20Olivos!5e0!3m2!1ses-419!2smx!4v1711040100000!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -199,6 +241,17 @@
     function toggleFAQ(btn) {
       const p = btn.nextElementSibling;
       p.classList.toggle('hidden');
+    }
+    function scrollToSection(id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+    function openMap(url) {
+      window.open(url, '_blank', 'noopener');
+    }
+    function copyAddress(text) {
+      navigator.clipboard.writeText(text)
+        .then(() => alert('Dirección copiada'))
+        .catch(() => alert('No se pudo copiar, intenta manualmente'));
     }
     function goToRSVP() {
       const code = document.getElementById('code').value.trim();
