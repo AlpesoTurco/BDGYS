@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api";
+﻿const API_URL = "http://localhost:3000/api";
 
 async function apiRequest(endpoint, method = "GET", data = null, token = null) {
   const options = {
@@ -9,7 +9,7 @@ async function apiRequest(endpoint, method = "GET", data = null, token = null) {
   };
 
   if (token) {
-    options.headers["Authorization"] = token;
+    options.headers["Authorization"] = token.startsWith("Bearer ") ? token : `Bearer ${token}`;
   }
 
   if (data) {
@@ -17,5 +17,24 @@ async function apiRequest(endpoint, method = "GET", data = null, token = null) {
   }
 
   const res = await fetch(`${API_URL}${endpoint}`, options);
-  return res.json();
+
+  const contentType = res.headers.get('content-type') || '';
+  let payload;
+  try {
+    if (contentType.includes('application/json')) {
+      payload = await res.json();
+    } else {
+      const text = await res.text();
+      payload = { message: text || 'Respuesta vacía' };
+    }
+  } catch (e) {
+    payload = { message: 'Error al procesar la respuesta' };
+  }
+
+  if (!res.ok) {
+    const message = payload?.message || `Error ${res.status}`;
+    throw new Error(message);
+  }
+
+  return payload;
 }

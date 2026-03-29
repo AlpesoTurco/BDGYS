@@ -1,16 +1,18 @@
-async function login() {
-  const username = document.getElementById("username").value;
+﻿async function login(event) {
+  if (event) event.preventDefault();
+  const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value;
 
-  const res = await apiRequest("/auth/login", "POST", {
-    username,
-    password
-  });
+  const button = event?.target?.querySelector("button[type='submit']");
+  if (button) button.disabled = true;
 
-  if (res.token) {
+  try {
+    const res = await apiRequest("/auth/login", "POST", { username, password });
     localStorage.setItem("token", res.token);
-    window.location.href = "admin.html";
-  } else {
-    alert("Error de login");
+    window.location.href = "/admin";
+  } catch (err) {
+    alert(err.message || "Error de login");
+  } finally {
+    if (button) button.disabled = false;
   }
 }
