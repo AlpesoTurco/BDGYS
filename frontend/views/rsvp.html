@@ -68,9 +68,15 @@
         <div id="welcome" class="text-lg font-semibold text-wedding-700 mt-4"></div>
       </div>
 
+      <div id="successAlert" class="hidden mb-4 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-800 text-sm font-semibold">¡Listo! Guardamos tu confirmación.</div>
+
       <form id="rsvpForm" class="space-y-6">
-        <div>
+        <input type="hidden" id="guestCode" name="guestCode" />
+        <div class="flex items-center justify-between">
           <label class="block text-sm font-semibold text-wedding-700 mb-2">¿Asistirás?</label>
+          <span id="codePill" class="text-xs px-3 py-1 rounded-full bg-wedding-100 text-wedding-700 border border-wedding-200"></span>
+        </div>
+        <div>
           <select name="attendance" required class="w-full px-4 py-3 rounded-lg border-2 border-wedding-300 focus:border-gold focus:outline-none transition">
             <option value="">-- Selecciona una opción --</option>
             <option value="yes">Sí, asistiré</option>

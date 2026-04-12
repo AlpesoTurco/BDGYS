@@ -1,5 +1,7 @@
 ﻿const mysql = require('mysql2/promise');
-require('dotenv').config();
+const path = require('path');
+// Asegurar que se cargue el .env situado en /backend aunque el proceso se ejecute desde la ra?z
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,

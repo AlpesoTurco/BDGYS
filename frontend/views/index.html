@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Álvaro & María — Invitación</title>
+  <title>Gustavo & Sofía — Invitación</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -99,17 +99,17 @@
     @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
-<body class="min-h-screen text-slate-900 dark:text-slate-100 font-sans" data-theme>
+<body class="min-h-screen text-slate-900 dark:text-slate-100 font-sans antialiased leading-relaxed scroll-pt-20" data-theme>
   <div class="floating-shape w-80 h-80 bg-primary/30 top-10 left-4"></div>
   <div class="floating-shape w-96 h-96 bg-secondary/30 bottom-10 right-10"></div>
 
   <nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/60 dark:bg-slate-900/60 border-b border-white/10" id="navbar">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
       <div class="flex items-center gap-3">
         <div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-glow"></div>
         <div>
           <p class="text-sm uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Boda</p>
-          <h1 class="text-lg font-semibold">Álvaro & María</h1>
+          <h1 class="text-lg font-semibold">Gustavo & Sofía</h1>
         </div>
       </div>
       <div class="hidden md:flex items-center gap-2 text-sm">
@@ -120,21 +120,32 @@
         <a class="px-3 py-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20" href="#rsvp">RSVP</a>
       </div>
       <div class="flex items-center gap-2">
+        <button id="menuToggle" class="md:hidden relative ripple px-3 py-2 rounded-full bg-white/70 dark:bg-slate-800/60 border border-white/30 text-sm shadow-soft" aria-label="Abrir menú" aria-expanded="false">☰</button>
         <button id="themeToggle" class="relative ripple px-3 py-2 rounded-full bg-primary text-white text-sm shadow-glow hover:scale-[1.02] transition" aria-label="Cambiar tema">🌙</button>
         <a href="#rsvp" class="hidden sm:inline-flex ripple px-4 py-2 rounded-full bg-gradient-to-r from-primary to-secondary text-slate-900 font-semibold shadow-soft hover:shadow-glow transition">Confirmar</a>
       </div>
     </div>
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-slate-900/70 backdrop-blur-sm opacity-0 pointer-events-none transition">
+      <div class="absolute top-16 inset-x-4 rounded-2xl glass-panel p-4 space-y-2 shadow-glass border border-white/10">
+        <a class="block px-3 py-2 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20" href="#historia">Historia</a>
+        <a class="block px-3 py-2 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20" href="#evento">Evento</a>
+        <a class="block px-3 py-2 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20" href="#mapa">Ubicación</a>
+        <a class="block px-3 py-2 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-xl hover:bg-primary/10 dark:hover:bg-primary/20" href="#rsvp">RSVP</a>
+        <a href="#rsvp" class="w-full inline-flex justify-center ripple px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-primaryDark text-slate-900 font-semibold shadow-soft">Confirmar asistencia</a>
+      </div>
+    </div>
   </nav>
 
-  <header class="max-w-6xl mx-auto px-4 pt-14 pb-12 md:pb-16 relative">
-    <div class="hero-grid grid grid-cols-2 gap-8 items-center">
+  <header class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-12 md:pb-16 relative">
+    <div class="hero-grid grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
       <div class="space-y-6 animate-fadeUp" style="animation-delay:0.05s">
         <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 dark:bg-slate-800/70 text-sm border border-white/20 shadow-soft">✨ Invitación · 11 Noviembre 2026</p>
-        <h2 class="text-4xl md:text-5xl font-semibold leading-tight">Una experiencia de boda elegante, minimal y muy pulida.</h2>
-        <p class="text-lg text-slate-600 dark:text-slate-300">Glassmorphism, dorados sutiles y micro animaciones. Guarda la fecha, confirma asistencia y obtén detalles en una interfaz tipo SaaS premium.</p>
-        <div class="flex flex-wrap gap-3">
-          <a href="#rsvp" class="relative ripple px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primaryDark text-slate-900 font-semibold shadow-soft hover:shadow-glow transition">Confirmar asistencia</a>
-          <a href="#mapa" class="relative ripple px-6 py-3 rounded-full border border-white/30 bg-white/60 dark:bg-slate-800/60 text-slate-800 dark:text-slate-100 font-semibold hover:border-primary/50 transition">Ver ubicaciones</a>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-balance">Una experiencia de boda elegante, minimal y muy pulida.</h2>
+        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl">Glassmorphism, dorados sutiles y micro animaciones. Guarda la fecha, confirma asistencia y obtén detalles en una interfaz tipo SaaS premium.</p>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3">
+          <a href="#rsvp" class="relative ripple px-6 py-3 rounded-full bg-gradient-to-r from-primary to-primaryDark text-slate-900 font-semibold shadow-soft hover:shadow-glow transition w-full sm:w-auto text-center">Confirmar asistencia</a>
+          <a href="#mapa" class="relative ripple px-6 py-3 rounded-full border border-white/30 bg-white/70 dark:bg-slate-800/60 text-slate-800 dark:text-slate-100 font-semibold hover:border-primary/50 transition w-full sm:w-auto text-center">Ver ubicaciones</a>
         </div>
         <div class="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
           <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-success animate-pulse"></span> Cupos limitados</div>
@@ -151,7 +162,7 @@
             </div>
             <div class="px-3 py-1 rounded-full bg-primary/15 text-primary font-semibold text-sm">Live</div>
           </div>
-          <div class="grid grid-cols-4 gap-3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="glass-panel bg-white/60 dark:bg-slate-900/50 rounded-2xl p-4 text-center border border-white/20">
               <p class="text-3xl font-bold" id="days">0</p>
               <p class="text-xs text-slate-500 dark:text-slate-400">Días</p>
@@ -178,8 +189,8 @@
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 pb-16 space-y-14">
-    <section id="historia" class="glass-panel rounded-3xl p-10 relative overflow-hidden animate-fadeUp" style="animation-delay:0.1s">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 space-y-14">
+    <section id="historia" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden animate-fadeUp" style="animation-delay:0.1s">
       <div class="absolute -right-10 -top-10 w-48 h-48 bg-primary/20 rounded-full blur-3xl"></div>
       <div class="flex items-center justify-between mb-6">
         <div>
@@ -193,7 +204,7 @@
           <p>Desde el primer encuentro supimos que este viaje sería distinto. Risas, aventuras y momentos que ahora queremos compartir con quienes más queremos.</p>
           <p>Gracias por ser parte de este capítulo. Prepárate para una celebración pensada con detalle, tan cuidada como una app de clase mundial.</p>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="relative rounded-2xl overflow-hidden shadow-card">
             <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=600&q=70')] bg-cover bg-center"></div>
             <div class="absolute inset-0 bg-black/45"></div>
@@ -231,7 +242,7 @@
     </section>
 
     <section id="evento" class="grid lg:grid-cols-3 gap-6 items-start animate-fadeUp" style="animation-delay:0.15s">
-      <div class="glass-panel rounded-3xl p-8 lg:col-span-2 border border-white/10">
+      <div class="glass-panel rounded-3xl p-6 sm:p-8 lg:col-span-2 border border-white/10">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-2xl font-semibold">Detalles del Evento</h3>
           <span class="px-3 py-1 rounded-full bg-primary/15 text-primary text-sm">Live updated</span>
@@ -283,8 +294,8 @@
       </div>
     </section>
 
-    <section class="grid lg:grid-cols-2 gap-6 items-stretch animate-fadeUp" style="animation-delay:0.2s">
-      <div class="glass-panel rounded-3xl p-8 border border-white/10 space-y-6">
+    <section id="mapa" class="grid lg:grid-cols-2 gap-6 items-stretch animate-fadeUp" style="animation-delay:0.2s">
+      <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 space-y-6">
         <div class="flex items-center justify-between">
           <h3 class="text-2xl font-semibold">Ubicaciones</h3>
           <span class="px-3 py-1 rounded-full bg-secondary/40 text-slate-800 text-sm">Mapas en vivo</span>
@@ -302,7 +313,7 @@
             </div>
           </div>
           <div class="rounded-2xl overflow-hidden border border-white/10 shadow-soft">
-            <iframe class="w-full h-60 md:h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5937102309834!2d-102.3490419!3d20.9375656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d940a3d2c18b%3A0x6e6d53295d85f1e7!2sTemplo%20del%20Se%C3%B1or%20San%20Jos%C3%A9!5e0!3m2!1ses-419!2smx!4v1711040000000!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="w-full h-60 md:h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5937102309834!2d-102.3490419!3d20.9375656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d940a3d2c18b%3A0x6e6d53295d85f1e7!2sTemplo%20del%20Se%C3%B1or%20San%20Jos%C3%A9!5e0!3m2!1ses-419!2smx!4v1711040000000!5m2!1ses-419!2smx" style="border:0; aspect-ratio: 16 / 10;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <div class="space-y-4">
@@ -317,11 +328,11 @@
             </div>
           </div>
           <div class="rounded-2xl overflow-hidden border border-white/10 shadow-soft">
-            <iframe class="w-full h-60 md:h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.663909594837!2d-102.3398206!3d20.9347985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d9415c1f6c03%3A0xf0df053cf4a730a0!2sSal%C3%B3n%20Los%20Olivos!5e0!3m2!1ses-419!2smx!4v1711040100000!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="w-full h-60 md:h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.663909594837!2d-102.3398206!3d20.9347985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d9415c1f6c03%3A0xf0df053cf4a730a0!2sSal%C3%B3n%20Los%20Olivos!5e0!3m2!1ses-419!2smx!4v1711040100000!5m2!1ses-419!2smx" style="border:0; aspect-ratio: 16 / 10;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
-      <div class="glass-panel rounded-3xl p-8 border border-white/10 flex flex-col gap-4">
+      <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 flex flex-col gap-4" id="faq">
         <div class="flex items-center justify-between">
           <h3 class="text-2xl font-semibold">Preguntas frecuentes</h3>
           <span class="text-xs px-3 py-1 rounded-full bg-white/20 text-slate-800">UX friendly</span>
@@ -344,39 +355,81 @@
       </div>
     </section>
 
-    <section id="rsvp" class="glass-panel rounded-3xl p-10 border border-white/10 animate-fadeUp" style="animation-delay:0.25s">
+    <section id="rsvp" class="glass-panel rounded-3xl p-6 sm:p-10 border border-white/10 animate-fadeUp" style="animation-delay:0.25s">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
         <div>
           <p class="text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-300">RSVP</p>
           <h3 class="text-3xl font-semibold">Confirma tu asistencia</h3>
-          <p class="text-slate-600 dark:text-slate-300">Ingresa tu código de invitación. Respuesta instantánea.</p>
+          <p class="text-slate-600 dark:text-slate-300">Validamos tu código en vivo y te llevamos al formulario.</p>
         </div>
         <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-300">
           <span class="h-2.5 w-2.5 rounded-full bg-success animate-pulse"></span> Cupos activos
         </div>
       </div>
       <div class="grid md:grid-cols-[2fr,3fr] gap-6 items-center">
-        <div class="space-y-3">
-          <label class="text-sm text-slate-500 dark:text-slate-300" for="code">Código</label>
-          <div class="relative group">
-            <input id="code" type="text" placeholder="Ej. ABC123" class="w-full px-4 py-3 rounded-2xl border border-white/20 bg-white/70 dark:bg-slate-900/60 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" />
-            <div class="absolute inset-0 rounded-2xl border border-white/10 group-focus-within:border-primary/60"></div>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-300 mb-2">
+            <label class="text-sm font-medium text-slate-500 dark:text-slate-200" for="code">
+              Código de invitación
+            </label>
+            
+            <span id="rsvpStatusBadge" class="inline-flex items-center gap-2 px-2 py-1 rounded-full border border-white/20 bg-white/50 dark:bg-slate-900/60 text-[11px]">
+              <span class="h-2 w-2 rounded-full bg-slate-400" id="rsvpDot"></span>
+              <span id="rsvpBadgeText">Listo para validar</span>
+            </span>
           </div>
-          <button onclick="goToRSVP()" class="relative ripple w-full px-4 py-3 rounded-2xl bg-gradient-to-r from-primary to-primaryDark text-slate-900 font-semibold shadow-soft hover:shadow-glow transition">Continuar</button>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Tus datos viajan seguros · cifrado HTTPS</p>
+
+          <div class="relative group">
+            <input 
+              id="code" 
+              type="text" 
+              inputmode="text" 
+              autocomplete="one-time-code" 
+              placeholder="Ej. ABC123" 
+              class="w-full px-4 py-3 rounded-2xl uppercase tracking-[0.25em] text-sm md:text-base border border-white/20 bg-white/70 dark:bg-slate-900/60 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" 
+            />
+            
+            <div class="absolute inset-0 rounded-2xl border border-white/10 group-focus-within:border-primary/60 pointer-events-none"></div>
+            
+            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 text-sm pointer-events-none font-mono">
+              ⌘K
+            </span>
+          </div>
+          <button id="rsvpBtn" onclick="goToRSVP()" class="relative ripple w-full px-4 py-3 rounded-2xl bg-gradient-to-r from-primary to-primaryDark text-slate-900 font-semibold shadow-soft hover:shadow-glow transition">Validar y continuar</button>
+          <p id="rsvpStatus" class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-primary"></span> <span id="rsvpStatusText">Tus datos viajan seguros · cifrado HTTPS</span>
+          </p>
         </div>
         <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 dark:from-slate-900/60 p-6 shadow-soft">
           <div class="flex items-center gap-3 mb-4">
             <div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-glow"></div>
             <div>
-              <p class="text-sm text-slate-500 dark:text-slate-400">Estado RSVP</p>
-              <p class="font-semibold">Conéctate y confirma en segundos</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Estado en vivo</p>
+              <p class="font-semibold">3 pasos, menos de 1 minuto</p>
             </div>
           </div>
           <div class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
-            <div class="flex items-center gap-2"><span class="h-6 w-6 rounded-full bg-primary/20 border border-primary/40"></span> Notificación instantánea</div>
-            <div class="flex items-center gap-2"><span class="h-6 w-6 rounded-full bg-secondary/40 border border-secondary/60"></span> Resumen de acompañantes</div>
-            <div class="flex items-center gap-2"><span class="h-6 w-6 rounded-full bg-success/20 border border-success/40"></span> Confirmación garantizada</div>
+            <div class="flex items-center gap-3">
+              <span class="h-7 w-7 rounded-full border border-white/20 bg-primary/15 text-primary font-semibold inline-flex items-center justify-center">1</span>
+              <div>
+                <p class="font-semibold">Ingresa tu código</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Es único por invitado.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="h-7 w-7 rounded-full border border-white/20 bg-secondary/30 text-slate-700 font-semibold inline-flex items-center justify-center">2</span>
+              <div>
+                <p class="font-semibold">Validamos en vivo</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Respuesta instantánea con tu nombre.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="h-7 w-7 rounded-full border border-white/20 bg-success/20 text-success font-semibold inline-flex items-center justify-center">3</span>
+              <div>
+                <p class="font-semibold">Formulario desbloqueado</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Confirma asistentes y preferencias.</p>
+              </div>
+            </div>
           </div>
           <div class="mt-4 h-2 rounded-full bg-white/10 overflow-hidden">
             <div class="h-full w-3/4 bg-gradient-to-r from-primary to-secondary animate-[shimmer_1.8s_linear_infinite]"></div>
@@ -387,7 +440,7 @@
   </main>
 
   <footer class="max-w-6xl mx-auto px-4 pb-10 text-sm text-slate-500 dark:text-slate-400 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-    <p>2026 · Álvaro & María · Hecho con cariño y mucho UX.</p>
+    <p>2026 · Gutavo & Sofía · Eres mi lugar favorito en el mundo y mi destino preferido..</p>
     <div class="flex items-center gap-3">
       <span class="h-2 w-2 rounded-full bg-primary"></span> Experiencia optimizada para móvil y desktop
     </div>
@@ -396,6 +449,8 @@
   <script>
     const root = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuToggle = document.getElementById('menuToggle');
     const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     function applyTheme(isDark) {
@@ -413,6 +468,19 @@
       applyTheme(isDark);
     });
 
+    function toggleMenu(force) {
+      if (!mobileMenu) return;
+      const isOpen = mobileMenu.classList.contains('opacity-100');
+      const nextState = typeof force === 'boolean' ? force : !isOpen;
+      mobileMenu.classList.toggle('opacity-0', !nextState);
+      mobileMenu.classList.toggle('pointer-events-none', !nextState);
+      mobileMenu.classList.toggle('opacity-100', nextState);
+      menuToggle?.setAttribute('aria-expanded', nextState);
+    }
+    menuToggle?.addEventListener('click', () => toggleMenu());
+    mobileMenu?.addEventListener('click', (e) => { if (e.target === mobileMenu) toggleMenu(false); });
+    mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+
     function scrollToSection(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
     function openMap(url) { window.open(url, '_blank', 'noopener'); }
     function copyAddress(text) {
@@ -420,11 +488,52 @@
         .then(() => showToast('Dirección copiada'))
         .catch(() => showToast('No se pudo copiar, intenta manualmente', true));
     }
-    function goToRSVP() {
-      const code = document.getElementById("code").value.trim();
-      if (!code) return showToast("Ingresa tu código", true);
-      window.location.href = `rsvp.html?code=${code}`;
+
+    const codeInput = document.getElementById('code');
+    const rsvpBtn = document.getElementById('rsvpBtn');
+    const rsvpStatus = document.getElementById('rsvpStatus');
+    const rsvpStatusText = document.getElementById('rsvpStatusText');
+    const rsvpDot = document.getElementById('rsvpDot');
+    const rsvpBadge = document.getElementById('rsvpStatusBadge');
+    const rsvpBadgeText = document.getElementById('rsvpBadgeText');
+
+    function setRSVPState(state, message) {
+      const states = {
+        idle: { dot: 'bg-slate-400', text: 'Listo para validar' },
+        loading: { dot: 'bg-primary animate-pulse', text: 'Validando...' },
+        success: { dot: 'bg-success', text: 'Código válido' },
+        error: { dot: 'bg-danger', text: 'Código no encontrado' }
+      };
+      const current = states[state] || states.idle;
+      rsvpDot.className = `h-2 w-2 rounded-full ${current.dot}`;
+      if (rsvpBadgeText) rsvpBadgeText.textContent = current.text;
+      if (rsvpStatusText) rsvpStatusText.textContent = message || 'Tus datos viajan seguros · cifrado HTTPS';
     }
+
+    async function goToRSVP() {
+      const code = (codeInput?.value || '').trim().toUpperCase();
+      if (!code) { showToast('Ingresa tu código', true); return; }
+
+      setRSVPState('loading', 'Validando tu código...');
+      rsvpBtn.disabled = true;
+      rsvpBtn.textContent = 'Validando...';
+      try {
+        const res = await fetch(`/api/guests/${code}`);
+        if (!res.ok) throw new Error('Código no encontrado');
+        const guest = await res.json();
+        setRSVPState('success', `Hola ${guest.name || ''}, abre el formulario en 1 segundo`);
+        rsvpBtn.textContent = 'Abrir formulario';
+        setTimeout(() => { window.location.href = `rsvp.html?code=${code}`; }, 650);
+      } catch (err) {
+        setRSVPState('error', err.message || 'No pudimos validar el código');
+        showToast(err.message || 'Código inválido', true);
+        rsvpBtn.textContent = 'Validar y continuar';
+      } finally {
+        rsvpBtn.disabled = false;
+      }
+    }
+    codeInput?.addEventListener('input', () => { codeInput.value = codeInput.value.toUpperCase(); setRSVPState('idle'); });
+    codeInput?.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); goToRSVP(); } });
     function updateCountdown() {
       const weddingDate = new Date('2026-11-11T17:00:00-06:00').getTime();
       const now = new Date().getTime();
@@ -463,14 +572,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

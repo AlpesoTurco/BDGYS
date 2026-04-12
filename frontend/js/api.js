@@ -1,4 +1,5 @@
-﻿const API_URL = "http://localhost:3000/api";
+﻿// Usar el mismo origen en lugar de localhost evita fallas al abrir desde otro dispositivo o dominio.
+const API_URL = `${window.location.origin}/api`;
 
 async function apiRequest(endpoint, method = "GET", data = null, token = null) {
   const options = {
@@ -33,6 +34,13 @@ async function apiRequest(endpoint, method = "GET", data = null, token = null) {
 
   if (!res.ok) {
     const message = payload?.message || `Error ${res.status}`;
+    // Si hay problema de autenticación, limpiar token y redirigir a login
+    if (res.status === 401 || res.status === 403) {
+      try { localStorage.removeItem('token'); } catch (_e) {}
+      if (window.location.pathname !== '/login') {
+        window.location.href = '/login';
+      }
+    }
     throw new Error(message);
   }
 

@@ -31,6 +31,36 @@
     .admin-bg { background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; }
     .modal { display: none; }
     .modal.show { display: flex; }
+    @media (max-width: 640px) {
+      #guestTable thead { display: none; }
+      #guestTable tbody tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 6px;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      }
+      #guestTable tbody td {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 4px 0;
+      }
+      #guestTable tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #6b7280;
+      }
+      #guestTable tbody td:last-child {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 <body class="bg-panel text-ink">
@@ -238,14 +268,14 @@
         const attendanceLabel = g.attendance === 'yes' ? 'Sí' : g.attendance === 'no' ? 'No' : 'Pendiente';
         return `
           <tr class="hover:bg-gray-50">
-            <td class="px-3 py-2 font-medium">${g.name}</td>
-            <td class="px-3 py-2 text-gray-600">${g.email || ''}</td>
-            <td class="px-3 py-2 text-gray-600">${g.invitation_code || ''}</td>
-            <td class="px-3 py-2">
+            <td data-label="Nombre" class="px-3 py-2 font-medium">${g.name}</td>
+            <td data-label="Email" class="px-3 py-2 text-gray-600">${g.email || ''}</td>
+            <td data-label="Código" class="px-3 py-2 text-gray-600">${g.invitation_code || ''}</td>
+            <td data-label="Asistencia" class="px-3 py-2">
               <span class="px-2 py-1 rounded-full text-xs font-semibold ${g.attendance==='yes'?'bg-green-100 text-green-700':g.attendance==='no'?'bg-red-100 text-red-700':'bg-amber-100 text-amber-700'}">${attendanceLabel}</span>
             </td>
-            <td class="px-3 py-2 text-gray-600">${g.guests_count || 1}</td>
-            <td class="px-3 py-2 space-x-1 whitespace-nowrap">
+            <td data-label="Invitados" class="px-3 py-2 text-gray-600">${g.guests_count || 1}</td>
+            <td data-label="Acciones" class="px-3 py-2 flex flex-wrap gap-2 sm:space-x-1 sm:whitespace-nowrap">
               <button onclick="openEdit(${g.id})" class="text-blue-600 hover:underline">Editar</button>
               <button onclick="getLink('${g.invitation_code}')" class="text-gray-600 hover:underline">Link</button>
               <button onclick="getQR('${g.invitation_code}')" class="text-gray-600 hover:underline">QR</button>
@@ -262,7 +292,7 @@
         renderGuests();
       } catch (err) {
         console.error(err);
-        alert('No se pudieron cargar los invitados');
+        alert(err.message || 'No se pudieron cargar los invitados');
       }
     }
 
